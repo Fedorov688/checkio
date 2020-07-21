@@ -1,5 +1,21 @@
 def date_time(time: str) -> str:
     #replace this for solution
+    date, time = time.split()
+    day, month, year = date.split(".")
+    day, month, year = int(day), int(month), int(year)
+    hour, minute = time.split(":")
+    hour, minute = int(hour), int(minute)
+    months = ("January", "February", "March", "April", "May", "June", "July", "August",
+              "September", "October", "November", "December")
+    if hour == 1:
+        hs = "hour"
+    else:
+        hs = "hours"
+    if minute == 1:
+        ms = "minute"
+    else:
+        ms = "minutes"
+    time = f"{day} {months[month-1]} {year} year {hour} {hs} {minute} {ms}"
     return time
 
 if __name__ == '__main__':
